@@ -1,0 +1,13 @@
+html,body {
+ 	background: url(../img/index-bg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	position: absolute;
+ }
+ 
+ .logo {
+ 	width: 95px;
+ 	height: 65px;
+ }
