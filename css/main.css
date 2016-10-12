@@ -1,13 +1,46 @@
-html,body {
- 	background: url(../img/index-bg.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+html,
+body {
+	background: url(../img/auto-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+section {
+	width: 100%;
 	position: absolute;
- }
- 
- .logo {
- 	width: 95px;
- 	height: 65px;
- }
+	bottom: 10%;
+}
+
+.logo {
+	margin-top: 2em;
+	width: 120px;
+	height: 82px;
+}
+
+.btn-xl {
+	padding: 15px 45px;
+	font-size: 11px;
+}
+
+.btn {
+	font-family: Lato, Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-radius: 300px;
+	box-sizing: content-box;
+}
+.btn-outline {
+	color: #fff;
+	border: 1px solid;
+}
+
+.botones {
+	margin: 0 auto;
+}
+
+.btn-two {
+	border: none;
+	background: linear-gradient(to right, #3F1F62, #FC1DBD);
+}
