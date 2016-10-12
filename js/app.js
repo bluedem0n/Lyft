@@ -5,8 +5,8 @@
 // - Generar un código aleatorio con la estructura LAB-XYZ
 // - Validar lo obvio
 
-$(document).ready(function() {
-	$("#numero").keydown(function(evento) {
+$(document).ready(function () {
+	$("#numero").keydown(function (evento) {
 		var ascii = evento.keyCode;
 		if (ascii == 8 || (ascii >= 48 && ascii <= 57)) {
 			return true;
@@ -14,21 +14,36 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	$("#numero").keyup(function(evento) {
+	$("#numero").keyup(function (evento) {
 		var longitud = $(this).val().length;
 		if (longitud == 9) {
 			$("#siguiente").attr("href", "signup.html");
-		} else  {
+		} else {
 			$("#siguiente").removeAttr("href");
 		}
 
 	});
-	$("#numero").keypress(function(evento){
+	$("#numero").keypress(function (evento) {
 		var longitud = $(this).val().length;
-   if (longitud < 9) {
-        return true;
-    } else {
-        return false;
-    }
-});
+		if (longitud < 9) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+	$("#siguiente").click(function (evento) {
+		evento.preventDefault();
+		var code = "LAB-"
+		var aleatorio = Math.floor((Math.random() * 1000)+1);
+		swal({
+			title: "Tu codigo aleatorio es : ",
+			text: code + aleatorio,
+			type: "success",
+			showCancelButton: false,
+			confirmButtonText: "Ok!",
+			closeOnConfirm: true
+		}, function(){
+			window.location.href = $("#siguiente").attr("href");
+		});
+	});
 });
