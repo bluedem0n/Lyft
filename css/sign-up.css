@@ -1,20 +1,52 @@
 img {
 	width: 16px;
 }
+
 .lista {
 	min-width: 50px;
 }
+
 .p-13 {
 	padding: 0 13px !important;
 }
+
+
 /* Formulario */
 
-.mainbox{
-	margin-top:50px;
+.mainbox {
+	margin-top: 50px;
 }
-.panel-body{
-	 padding-top:30px;
+
+.panel-body {
+	padding-top: 30px;
 }
-.input-group{
-	 margin-bottom: 25px;
+
+.mb-5 {
+	margin-bottom: 25px;
+}
+
+.cont-icono {
+	position: relative;
+}
+
+.cont-icono .glyphicon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+
+.left-addon .glyphicon {
+	left: 0px;
+}
+
+.right-addon .glyphicon {
+	right: 0px;
+}
+
+.left-addon input {
+	padding-left: 30px;
+}
+
+.right-addon input {
+	padding-right: 30px;
 }
