@@ -12,13 +12,20 @@ img {
 
 
 /* Formulario */
-
+.panel-info>.panel-heading {
+    color: #3F1F62;
+    border-color: #E30A8C;
+    background: linear-gradient(to left, #B9078A, #FC1DBD);
+}
 .mainbox {
 	margin-top: 50px;
 }
 
 .panel-body {
 	padding-top: 30px;
+}
+.panel-info {
+    border-color: #E30A8C;
 }
 
 .mb-5 {
@@ -49,4 +56,7 @@ img {
 
 .right-addon input {
 	padding-right: 30px;
+}
+.terms{
+	color: #05AAF7;
 }
