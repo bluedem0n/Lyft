@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -17,14 +17,19 @@
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-	<header>
-		<span class="fa fa-chevron-left icono-back" aria-hidden="true"></span>
-		<h2 class="text-center titulo">Sign Up</h2>
-		<p class="text-center">Join now for free ride credit</p>
-		<hr>
-	</header>
+	<header class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<a href="index.html" class="glyphicon glyphicon-chevron-left icono" aria-hidden="true"></a>
+				</div>
+				<div class="col-xs-8 text-center">
+					<h2>Sign Up</h2>
+					<h5>Join now for free ride credit</h5>
+				</div>
+			</div>
+			<hr>
+		</header>
 	<section>
 		<div class="container">
 			<div class="row">
@@ -47,6 +52,7 @@
 								</li>
 							</ul>
 						</div>
+						<span class="codigo phone">+51</span>
 						<input type="tel" name="telefono" id="numero" class="form-control" placeholder="123456789" aria-label="...">
 					</div>
 				</div>
@@ -67,5 +73,4 @@
 	<script src="js/sweetalert-dev.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
-
 </html>

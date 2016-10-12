@@ -31,8 +31,10 @@ $(document).ready(function () {
 		}
 	});
 	$("#siguiente").click(function (evento) {
+		var longitud = $("#numero").val().length;
 		evento.preventDefault();
-		var code = "LAB-";
+		if(longitud === 9){
+				var code = "LAB-";
 		var aleatorio = Math.floor((Math.random() * 900) + 99);
 		swal({
 			title: "Tu codigo aleatorio es : ",
@@ -44,5 +46,6 @@ $(document).ready(function () {
 		}, function () {
 			window.location.href = $("#siguiente").attr("href");
 		});
+		}
 	});
 });

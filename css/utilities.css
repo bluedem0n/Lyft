@@ -1,13 +1,28 @@
 .mb-5 {
 	margin-bottom: 25px;
 }
-.titulo{
-	margin-top:-28px !important;
+.icono{
+	font-size: 2em;
+    padding: 27px 0px;
+    color: black;
 }
-.icono-back{
-	margin-top: 20px;
-	margin-left: 10px;
-	font-size: 28px !important;
+
+.icono:hover{
+	text-decoration: none;
+	color: black;
+}
+
+.text-center h2{
+	font-weight: bold;
+}
+.codigo{
+	display: inline-block;
+	font-weight: bold;
+}
+
+.phone {
+    padding: 8px 0px;
+    font-size: 16px;
 }
 .btn {
     width: 100%;
