@@ -1,10 +1,6 @@
 .mb-5 {
 	margin-bottom: 25px;
 }
-<<<<<<< HEAD
-.btn-large{
-	width: 100%;
-=======
 .titulo{
 	margin-top:-28px !important;
 }
@@ -15,27 +11,10 @@
 }
 .btn {
     width: 100%;
->>>>>>> 4786efa9b6392aefb0f1b791405d184bd063c458
 	letter-spacing: 2px;
 }
+
 .btn-next {
-<<<<<<< HEAD
-	height: 50px;
-	margin: 0;
-	padding: 0 20px;
-	vertical-align: middle;
-	background-color: #FF00BE;
-	border: 0;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	font-weight: 300;
-	line-height: 50px;
-	color: #fff;
-	border-radius: 4px;
-	text-shadow: none;
-	box-shadow: none;
-	transition: all .3s;
-=======
     padding: 0 20px;
     background-color: #FF00BE;
     border: 0;
@@ -44,10 +23,8 @@
     line-height: 50px;
     color: #fff;
     transition: all .3s;
->>>>>>> 4786efa9b6392aefb0f1b791405d184bd063c458
 }
-
-.botones {
+.botones{
 	margin: 0 auto;
 	width: 100%;
 	position: absolute;
