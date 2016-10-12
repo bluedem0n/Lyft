@@ -13,6 +13,12 @@ section {
 	bottom: 10%;
 }
 
+a:focus,
+a:hover,
+.btn:hover {
+	color: #fff !important;
+}
+
 .logo {
 	margin-top: 2em;
 	width: 120px;
@@ -31,6 +37,7 @@ section {
 	border-radius: 300px;
 	box-sizing: content-box;
 }
+
 .btn-outline {
 	color: #fff;
 	border: 1px solid;
