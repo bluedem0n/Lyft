@@ -21,7 +21,6 @@ $(document).ready(function () {
 		} else {
 			$("#siguiente").removeAttr("href");
 		}
-
 	});
 	$("#numero").keypress(function (evento) {
 		var longitud = $(this).val().length;
@@ -33,8 +32,8 @@ $(document).ready(function () {
 	});
 	$("#siguiente").click(function (evento) {
 		evento.preventDefault();
-		var code = "LAB-"
-		var aleatorio = Math.floor((Math.random() * 1000)+1);
+		var code = "LAB-";
+		var aleatorio = Math.floor((Math.random() * 900) + 99);
 		swal({
 			title: "Tu codigo aleatorio es : ",
 			text: code + aleatorio,
@@ -42,7 +41,7 @@ $(document).ready(function () {
 			showCancelButton: false,
 			confirmButtonText: "Ok!",
 			closeOnConfirm: true
-		}, function(){
+		}, function () {
 			window.location.href = $("#siguiente").attr("href");
 		});
 	});
