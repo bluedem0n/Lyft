@@ -45,3 +45,16 @@
 	position: absolute;
 	bottom: 5%;
 }
+.numero {
+    border-left: none;
+    border-right: none;
+    border-top: white;
+    padding-left: 10px;
+    border-color: gray;
+    display: inline-block;
+    width: 50px;
+    margin-top: 20px;
+}
+.numero:focus{
+	outline: none;
+}
