@@ -15,15 +15,6 @@
 .text-center h2{
 	font-weight: bold;
 }
-.codigo{
-	display: inline-block;
-	font-weight: bold;
-}
-
-.phone {
-    padding: 8px 0px;
-    font-size: 16px;
-}
 .btn {
     width: 100%;
 	letter-spacing: 2px;
@@ -45,7 +36,7 @@
 	position: absolute;
 	bottom: 5%;
 }
-.numero {
+.codigo {
     border-left: none;
     border-right: none;
     border-top: white;
@@ -55,6 +46,6 @@
     width: 50px;
     margin-top: 20px;
 }
-.numero:focus{
+.codigo:focus{
 	outline: none;
 }
