@@ -13,6 +13,8 @@ var cargar = function () {
 	$(".codigo").keypress(longCode);
 	$(".codigo").keydown(numbersValidation);
 	$("#cel").text(window.localStorage.getItem("celu"));
+	$(".codigo").keydown(changeInput);
+	$("#siguienteValidar").click(validateCode);
 }
 
 $(document).ready(cargar);
@@ -44,10 +46,10 @@ function keyDisable(e) {
 
 function codeGenerator(e) {
 	var longitud = $("#numero").val().length;
-	var numeroAleatorio = Math.floor(Math.random()*900)+99;
+	var numeroAleatorio = Math.floor(Math.random() * 900) + 99;
 	e.preventDefault();
 	if (longitud === 9) {
-		window.localStorage.setItem("numberRandom",numeroAleatorio);
+		window.localStorage.setItem("numberRandom", numeroAleatorio);
 		swal({
 			title: "Tu codigo aleatorio es : ",
 			text: "LAB-" + localStorage.getItem("numberRandom"),
@@ -56,17 +58,33 @@ function codeGenerator(e) {
 			confirmButtonText: "Ok!",
 			closeOnConfirm: true
 		}, function () {
-			localStorage.setItem("celu",$("#numero").val());
+			localStorage.setItem("celu", $("#numero").val());
 			window.location.href = $("#siguiente").attr("href");
 		});
 	}
 }
 
-function longCode(e) {
+function longCode() {
 	if ($(this).val().length === 0) {
-		$("#siguiente").attr("href","signup.html");
+		$("#siguiente").attr("href", "signup.html");
 	} else {
 		return false;
+	}
+
+}
+
+function changeInput() {
+	if ($(".codigo").val().length == 1) {
+		$(".codigo").next().focus();
+	}
+}
+
+function validateCode() {
+	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
+	if (concatCode == localStorage.getItem("numberRandom")) {
+		$("#siguienteValidar").attr("href", "signup.html");
+	} else {
+		swal("Marginal tu codigo es incorrecto")
 	}
 
 }
