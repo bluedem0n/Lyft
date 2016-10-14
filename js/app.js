@@ -12,6 +12,7 @@ var cargar = function () {
 	$("#siguiente").click(codeGenerator);
 	$(".codigo").keypress(longCode);
 	$(".codigo").keydown(numbersValidation);
+	$("#cel").text(window.localStorage.getItem("celu"));
 }
 
 $(document).ready(cargar);
@@ -43,18 +44,19 @@ function keyDisable(e) {
 
 function codeGenerator(e) {
 	var longitud = $("#numero").val().length;
+	var numeroAleatorio = Math.floor(Math.random()*900)+99;
 	e.preventDefault();
 	if (longitud === 9) {
-		var code = "LAB-";
-		var aleatorio = Math.floor((Math.random() * 900) + 99);
+		window.localStorage.setItem("numberRandom",numeroAleatorio);
 		swal({
 			title: "Tu codigo aleatorio es : ",
-			text: code + aleatorio,
+			text: "LAB-" + localStorage.getItem("numberRandom"),
 			type: "success",
 			showCancelButton: false,
 			confirmButtonText: "Ok!",
 			closeOnConfirm: true
 		}, function () {
+			localStorage.setItem("celu",$("#numero").val());
 			window.location.href = $("#siguiente").attr("href");
 		});
 	}
@@ -62,8 +64,9 @@ function codeGenerator(e) {
 
 function longCode(e) {
 	if ($(this).val().length === 0) {
-		return true;
+		$("#siguiente").attr("href","signup.html");
 	} else {
 		return false;
 	}
+
 }
