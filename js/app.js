@@ -10,10 +10,10 @@ var cargar = function () {
 	$("#numero").keyup(longNumbers);
 	$("#numero").keypress(keyDisable);
 	$("#siguiente").click(codeGenerator);
-	$(".codigo").keypress(longCode);
-	$(".codigo").keydown(numbersValidation);
+	$(".num").keypress(longCode);
+	$(".num").keydown(numbersValidation);
 	$("#cel").text(window.localStorage.getItem("celu"));
-	$(".codigo").keydown(changeInput);
+	$(".num").keyup(changeInput);
 	$("#siguienteValidar").click(validateCode);
 }
 
@@ -28,7 +28,7 @@ function numbersValidation(e) {
 	}
 }
 
-function longNumbers(e) {
+function longNumbers() {
 	if ($(this).val().length == 9) {
 		$("#siguiente").attr("href", "verifynumber.html");
 	} else {
@@ -36,7 +36,7 @@ function longNumbers(e) {
 	}
 }
 
-function keyDisable(e) {
+function keyDisable() {
 	if ($(this).val().length < 9) {
 		return true;
 	} else {
@@ -44,7 +44,7 @@ function keyDisable(e) {
 	}
 }
 
-function codeGenerator(e) {
+function codeGenerator() {
 	var longitud = $("#numero").val().length;
 	var numeroAleatorio = Math.floor(Math.random() * 900) + 99;
 	e.preventDefault();
@@ -74,13 +74,14 @@ function longCode() {
 }
 
 function changeInput() {
-	if ($(".codigo").val().length == 1) {
-		$(".codigo").next().focus();
+	var long = $(this).val().length;
+	if( long == 1){
+		$(this).next().focus();
 	}
 }
 
 function validateCode() {
-	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
+	var concatCode = $(".num").eq(0).val() + $(".num").eq(1).val() + $(".num").eq(2).val();
 	if (concatCode == localStorage.getItem("numberRandom")) {
 		$("#siguienteValidar").attr("href", "signup.html");
 	} else {
