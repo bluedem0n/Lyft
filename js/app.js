@@ -10,10 +10,10 @@ var cargar = function () {
 	$("#numero").keyup(longNumbers);
 	$("#numero").keypress(keyDisable);
 	$("#siguiente").click(codeGenerator);
-	$(".num").keypress(longCode);
-	$(".num").keydown(numbersValidation);
+	$(".codigo").keypress(longCode);
+	$(".codigo").keydown(numbersValidation);
 	$("#cel").text(window.localStorage.getItem("celu"));
-	$(".num").keyup(changeInput);
+	$(".codigo").keyup(changeInput);
 	$("#siguienteValidar").click(validateCode);
 }
 
@@ -55,7 +55,7 @@ function codeGenerator(e) {
 			text: "LAB-" + localStorage.getItem("numberRandom"),
 			type: "success",
 			showCancelButton: false,
-			confirmButtonText: "Ok!",
+			confirmButtonText: "OK",
 			closeOnConfirm: true
 		}, function () {
 			localStorage.setItem("celu", $("#numero").val());
@@ -81,7 +81,7 @@ function changeInput() {
 }
 
 function validateCode() {
-	var concatCode = $(".num").eq(0).val() + $(".num").eq(1).val() + $(".num").eq(2).val();
+	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
 	if (concatCode == localStorage.getItem("numberRandom")) {
 		$("#siguienteValidar").attr("href", "signup.html");
 	} else {

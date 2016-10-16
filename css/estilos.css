@@ -1,21 +1,94 @@
 img {
-	width: 16px;
+	width: 22px;
+	margin-right: 10px;
+}
+.text-center h3 {
+	font-weight: bold;
+}
+.btn-next {
+	padding: 0 20px;
+	background-color: #FF00BE;
+	border: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 50px;
+	color: #fff;
+	transition: all .3s;
+	width: 100%;
+	letter-spacing: 2px;
+	border-radius: 0px;
+}
+.boton {
+	position: absolute;
+	bottom: 0;
 }
 
-.lista {
-	min-width: 50px;
+/* Ingresar Numero */
+
+.icono {
+	font-size: 2em;
+	padding: 27px 0px;
+	color: black;
 }
 
-.p-13 {
-	padding: 0 13px !important;
+.icono:hover {
+	text-decoration: none;
+	color: black;
 }
 
-/* Formulario */
+#numero {
+	outline: 0px;
+}
+
+.form-control:focus {
+   border-color: #ccc;
+    box-shadow: none;
+}
+#postal {
+	color: #9FA4A7;
+	;
+	border-right: none;
+}
+
+#postal:hover {
+	background-color: #fff;
+	border-color: #ccc;
+}
+
+#postal:focus {
+	outline: 0px;
+}
+
+.menu {
+	min-width: 10px;
+}
+
+.dropdown-menu>li>a {
+	padding: 5px 16px !important;
+}
+
+/* Verificar numero */
+.codigo {
+	border: none;
+	border-bottom: 1px solid gray;
+	border-color: gray;
+	margin-left: 10px;
+	width: 15%;
+	margin-top: 20px;
+}
+
+.codigo:focus {
+	outline: none;
+}
+
+/* Formulario  Sign up*/
+
 .panel-info>.panel-heading {
-    color: #3F1F62;
-    border-color: #E30A8C;
-    background: linear-gradient(to left, #B9078A, #FC1DBD);
+	color: #3F1F62;
+	border-color: #E30A8C;
+	background: linear-gradient(to left, #B9078A, #FC1DBD);
 }
+
 .mainbox {
 	margin-top: 50px;
 }
@@ -23,9 +96,11 @@ img {
 .panel-body {
 	padding-top: 30px;
 }
+
 .panel-info {
-    border-color: #E30A8C;
+	border-color: #E30A8C;
 }
+
 .cont-icono {
 	position: relative;
 }
@@ -51,56 +126,11 @@ img {
 .right-addon input {
 	padding-right: 30px;
 }
-.terms{
+
+.terms {
 	color: #05AAF7;
 }
 
 .mb-5 {
 	margin-bottom: 25px;
-}
-.icono{
-	font-size: 2em;
-    padding: 27px 0px;
-    color: black;
-}
-
-.icono:hover{
-	text-decoration: none;
-	color: black;
-}
-
-.text-center h2{
-	font-weight: bold;
-}
-.btn {
-    width: 100%;
-	letter-spacing: 2px;
-}
-
-.btn-next {
-    padding: 0 20px;
-    background-color: #FF00BE;
-    border: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 50px;
-    color: #fff;
-    transition: all .3s;
-}
-.boton{
-	position: absolute;
-	bottom: 0;
-}
-.codigo {
-    border-left: none;
-    border-right: none;
-    border-top: white;
-    padding-left: 10px;
-    border-color: gray;
-    display: inline-block;
-    width: 50px;
-    margin-top: 20px;
-}
-.codigo:focus{
-	outline: none;
 }
