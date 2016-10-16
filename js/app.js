@@ -44,10 +44,10 @@ function keyDisable() {
 	}
 }
 
-function codeGenerator() {
+function codeGenerator(e) {
+	e.preventDefault();
 	var longitud = $("#numero").val().length;
 	var numeroAleatorio = Math.floor(Math.random() * 900) + 99;
-	e.preventDefault();
 	if (longitud === 9) {
 		window.localStorage.setItem("numberRandom", numeroAleatorio);
 		swal({
