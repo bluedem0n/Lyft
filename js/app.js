@@ -1,10 +1,3 @@
-// Funcionalidades para Lyft
-
-// - Validar que solo se ingresen #s
-// - Validar que sean 9 #s como max.
-// - Generar un código aleatorio con la estructura LAB-XYZ
-// - Validar lo obvio
-
 var cargar = function () {
 	$("#numero").keydown(numbersValidation);
 	$("#numero").keyup(longNumbers);
@@ -16,9 +9,11 @@ var cargar = function () {
 	$(".codigo").keyup(changeInput);
 	$("#siguienteValidar").click(validateCode);
 	$("#resend").click(resend);
+	$("#siguienteRegistro").click(validateData);
 }
 
 $(document).ready(cargar);
+
 
 function numbersValidation(e) {
 	var ascii = e.keyCode;
@@ -90,20 +85,40 @@ function changeInput(e) {
 	var long = $(this).val().length;
 	if (long == 1) {
 		$(this).next().focus();
-	} 
-	if(e.keyCode == 8){
+	}
+	if (e.keyCode == 8) {
 		$(this).prev().focus();
 	}
 }
 
 function validateCode() {
 	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
-	if (concatCode == localStorage.getItem("numberRandom") || concatCode == 			localStorage.getItem("numberRandom2")) {
+	if (concatCode === localStorage.getItem("numberRandom") || concatCode === localStorage.getItem("numberRandom2")) {
 		$("#siguienteValidar").attr("href", "signup.html");
+	} else if ($(".codigo").val().length == 0) {
+		swal("Ingrese su código por favor")
 	} else {
 		$(".codigo").val("");
 		$(".codigo").eq(0).focus();
-		swal("Marginal tu codigo es incorrecto")
+		swal("Código inválido")
 	}
+}
 
+function validateData() {
+	var nombre = $("#nombre").val().trim().length;
+	var apellidos = $("#apellidos").val().trim().length;
+	var emailong = $("#email").val().trim().length;
+	var email = $("#email").val().trim();
+	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email)) {
+		$(this).attr("href", "index.html");
+	} else {
+		swal({
+			title: "Datos incorrectos",
+			text: "Ingresa correctamente tu información",
+			timer: 2000,
+			showConfirmButton: false
+		});
+	}
 }
