@@ -15,6 +15,7 @@ var cargar = function () {
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$(".codigo").keyup(changeInput);
 	$("#siguienteValidar").click(validateCode);
+	$("#resend").click(resend);
 }
 
 $(document).ready(cargar);
@@ -64,6 +65,18 @@ function codeGenerator(e) {
 	}
 }
 
+function resend(e) {
+	e.preventDefault();
+	var numeroAleatorio2 = Math.floor(Math.random() * 900) + 99;
+	window.localStorage.setItem("numberRandom2", numeroAleatorio2);
+	swal({
+		title: "Tu codigo aleatorio es : ",
+		text: "LAB-" + localStorage.getItem("numberRandom2"),
+		timer: 2000,
+		showConfirmButton: false
+	});
+}
+
 function longCode() {
 	if ($(this).val().length === 0) {
 		$("#siguiente").attr("href", "signup.html");
@@ -75,14 +88,14 @@ function longCode() {
 
 function changeInput() {
 	var long = $(this).val().length;
-	if( long == 1){
+	if (long == 1) {
 		$(this).next().focus();
 	}
 }
 
 function validateCode() {
 	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
-	if (concatCode == localStorage.getItem("numberRandom")) {
+	if (concatCode == localStorage.getItem("numberRandom") || concatCode == 			localStorage.getItem("numberRandom2")) {
 		$("#siguienteValidar").attr("href", "signup.html");
 	} else {
 		swal("Marginal tu codigo es incorrecto")
