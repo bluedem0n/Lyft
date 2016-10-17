@@ -86,10 +86,13 @@ function longCode() {
 
 }
 
-function changeInput() {
+function changeInput(e) {
 	var long = $(this).val().length;
 	if (long == 1) {
 		$(this).next().focus();
+	} 
+	if(e.keyCode == 8){
+		$(this).prev().focus();
 	}
 }
 
@@ -98,6 +101,8 @@ function validateCode() {
 	if (concatCode == localStorage.getItem("numberRandom") || concatCode == 			localStorage.getItem("numberRandom2")) {
 		$("#siguienteValidar").attr("href", "signup.html");
 	} else {
+		$(".codigo").val("");
+		$(".codigo").eq(0).focus();
 		swal("Marginal tu codigo es incorrecto")
 	}
 
