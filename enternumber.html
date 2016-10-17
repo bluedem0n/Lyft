@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -10,19 +10,26 @@
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom CSS -->
-	<link href="css/sign-up.css" rel="stylesheet">
-	<link href="css/utilities.css" rel="stylesheet">
+	<link href="css/estilos.css" rel="stylesheet">
+	<link href="css/queries.css" rel="stylesheet">
+	<link href="css/alert.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/sweetalert.css" />
 	<!-- Custom Fonts -->
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//cloud.typography.com/7898432/715602/css/fonts.css">
 </head>
 
 <body>
-	<header>
-		<span class="fa fa-chevron-left icono-back" aria-hidden="true"></span>
-		<h2 class="text-center titulo">Sign Up</h2>
-		<p class="text-center">Join now for free ride credit</p>
+	<header class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2">
+				<a href="index.html" class="glyphicon glyphicon-chevron-left icono" aria-hidden="true"></a>
+			</div>
+			<div class="col-xs-8 text-center">
+				<h3>Sign Up</h3>
+				<h5>Join now for free ride credit</h5>
+			</div>
+		</div>
 		<hr>
 	</header>
 	<section>
@@ -32,18 +39,19 @@
 					<div class="input-group">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/peru.png"><span class="caret"></span></button>
-							<ul class="dropdown-menu lista">
+							<button type="button" class="btn btn-default" id="postal">+51</button>
+							<ul class="dropdown-menu menu">
 								<li>
-									<a class="p-13" href="#"><img src="img/peru.png"></a>
+									<a href="#"><img src="img/chile.png"></a>
 								</li>
 								<li>
-									<a class="p-13" href="#"><img src="img/peru.png"></a>
+									<a href="#"><img src="img/usa.png"></a>
 								</li>
 								<li>
-									<a class="p-13" href="#"><img src="img/peru.png"></a>
+									<a href="#"><img src="img/mexico.png"></a>
 								</li>
 								<li>
-									<a class="p-13" href="#"><img src="img/peru.png"></a>
+									<a href="#"><img src="img/colombia.png"></a>
 								</li>
 							</ul>
 						</div>
@@ -52,15 +60,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<section>
-		<div class="container-fluid botones">
-			<div class="row text-center">
-				<div class="col-xs-12">
-					<a id="siguiente" class="btn btn-next" type="submit"> Next </a>
-				</div>
-			</div>
-		</div>
+		<a id="siguiente" class="btn boton btn-next container-fluid" type="submit"> Next </a>
 	</section>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

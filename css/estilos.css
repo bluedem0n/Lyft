@@ -1,0 +1,116 @@
+body {
+	font-family: "Gotham SSm A", "Gotham SSm B" sans-serif;
+	line-height: 1.5;
+	color: #333447;
+}
+
+img {
+	width: 22px;
+	margin-right: 10px;
+}
+
+.text-center h3 {
+	font-weight: bold;
+}
+
+.btn-next {
+	padding: 0 20px;
+	background-color: #FF00BE;
+	border: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 50px;
+	color: #fff;
+	transition: all .3s;
+	width: 100%;
+	letter-spacing: 2px;
+	border-radius: 0px;
+}
+
+.boton {
+	position: absolute;
+	bottom: 0;
+}
+
+
+/* Ingresar Numero */
+
+.icono {
+	font-size: 2em;
+	padding: 27px 0px;
+	color: black;
+}
+
+.icono:hover {
+	text-decoration: none;
+	color: black;
+}
+
+#numero {
+	outline: 0px;
+}
+
+.form-control:focus {
+	border-color: #ccc;
+	box-shadow: none;
+}
+
+#postal {
+	color: #9FA4A7;
+	;
+	border-right: none;
+}
+
+#postal:hover {
+	background-color: #fff;
+	border-color: #ccc;
+}
+
+#postal:focus {
+	outline: 0px;
+}
+
+.menu {
+	min-width: 10px;
+}
+
+.dropdown-menu>li>a {
+	padding: 5px 16px !important;
+}
+
+
+/* Verificar numero */
+
+.codigo {
+	border: none;
+	border-bottom: 1px solid gray;
+	border-color: gray;
+	margin-left: 10px;
+	width: 15%;
+	margin-top: 20px;
+}
+
+.codigo:focus {
+	outline: none;
+}
+
+/* Sign up */
+
+.terms {
+	color: #05AAF7;
+}
+
+.datos {
+	border: none;
+	display: inline-block;
+	width: 105px;
+}
+
+.datos:focus {
+	outline: none;
+}
+
+.terminos {
+	text-align: center;
+	margin: 18px;
+}
