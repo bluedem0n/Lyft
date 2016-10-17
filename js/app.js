@@ -10,6 +10,13 @@ var cargar = function () {
 	$("#siguienteValidar").click(validateCode);
 	$("#resend").click(resend);
 	$("#siguienteRegistro").click(validateData);
+
+
+	map = new GMaps({
+    div: '#pony',
+    lat: -12.043333,
+    lng: -77.028333
+  });
 }
 
 $(document).ready(cargar);
@@ -112,7 +119,7 @@ function validateData() {
 	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email)) {
-		$(this).attr("href", "index.html");
+		$(this).attr("href", "geolocation.html");
 	} else {
 		swal({
 			title: "Datos incorrectos",
@@ -122,3 +129,8 @@ function validateData() {
 		});
 	}
 }
+
+/* Geolocalización */
+
+
+
