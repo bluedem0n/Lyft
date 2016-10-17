@@ -18,40 +18,51 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<div class="panel-title">Sign Up</div>
-				</div>
-				<div class="panel-body">
-					<form id="loginform" class="form-horizontal" role="form">
-						<div class="cont-icono left-addon mb-5">
-							<i class="glyphicon glyphicon-user"></i>
-							<input id="" type="text" class="form-control" name="username" value="" placeholder="First Name            Last Name">
-						</div>
-						<div class="cont-icono left-addon mb-5">
-							<i class="glyphicon fa fa-envelope"></i>
-							<input id="" type="email" class="form-control" name="email" placeholder="Email">
-						</div>
-						<div class="input-group">
-							<div class="checkbox">
-								<label>
-									<input id="login-remember" type="checkbox" name="remember" value="1"> I agree to Lyft's <b class="terms"> Terms of Service </b>
-								</label>
-							</div>
-						</div>
-					</form>
-				</div>
+	<header class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2">
+				<a href="index.html" class="glyphicon glyphicon-chevron-left icono" aria-hidden="true"></a>
+			</div>
+			<div class="col-xs-8 text-center">
+				<h3>Sign Up</h3>
+				<h5>Join now for free ride credit</h5>
 			</div>
 		</div>
+		<hr>
+	</header>
+	<div class="container-fluid">
+		<form class="form-horizontal" role="form">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+						<div class="form-control">
+							<input type="text" name="nombre"  class="datos" placeholder="Nombre">
+							<input type="text" name="apellidos" class="datos" placeholder="Apellidos">
+						</div>
+					</div>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input type="text" class="form-control" placeholder="Correo">
+					</div>
+				</div>
+			</div> <br>
+			<div class="input-group terminos">
+				<div class="checkbox">
+					<label>
+						<input id="login-remember" type="checkbox" name="remember" value="1"> I agree to Lyft's <b class="terms"> Terms of Service </b>
+					</label>
+				</div>
+			</div>
+		</form>
 	</div>
-	<section>
-		<a id="siguiente" class="btn boton btn-next container-fluid" type="submit"> Next </a>
-	</section>
+	<a id="siguiente" class="btn boton btn-next container-fluid" type="submit"> Next </a>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 
-</html>
 </html>
