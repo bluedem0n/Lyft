@@ -126,8 +126,7 @@ var validarData = function () {
 	}
 }
 
-var validarCheck = function (e) {
-	e.preventDefault();
+var validarCheck = function () {
 	if ($("#checkbox").is(":checked")) {
 		$(this).attr("href", "geolocation.html");
 	} else {
