@@ -84,7 +84,7 @@ var longCodigo = function () {
 
 }
 
-var cambiaInput = function () {
+var cambiaInput = function (e) {
 	var long = $(this).val().length;
 	if (long == 1) {
 		$(this).next().focus();
