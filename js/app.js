@@ -107,7 +107,8 @@ var validarCodigo = function () {
 	}
 }
 
-var validarData = function () {
+var validarData = function (e) {
+	e.preventDefault();
 	var nombre = $("#nombre").val().trim().length;
 	var apellidos = $("#apellidos").val().trim().length;
 	var emailong = $("#email").val().trim().length;
