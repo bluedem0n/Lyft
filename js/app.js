@@ -1,21 +1,21 @@
 var cargar = function () {
-	$("#numero").keydown(numbersValidation);
-	$("#numero").keyup(longNumbers);
-	$("#numero").keypress(keyDisable);
-	$("#siguiente").click(codeGenerator);
-	$(".codigo").keypress(longCode);
-	$(".codigo").keydown(numbersValidation);
+	$("#numero").keydown(validaNumeros);
+	$("#numero").keyup(longCel);
+	$("#numero").keypress(deshabilitarTecla);
+	$("#siguiente").click(generadorCodigo);
+	$(".codigo").keypress(longCodigo);
+	$(".codigo").keydown(validaNumeros);
 	$("#cel").text(window.localStorage.getItem("celu"));
-	$(".codigo").keyup(changeInput);
-	$("#siguienteValidar").click(validateCode);
-	$("#resend").click(resend);
-	$("#siguienteRegistro").click(validateData);
+	$(".codigo").keyup(cambiaInput);
+	$("#siguienteValidar").click(validarCodigo);
+	$("#resend").click(reenviar);
+	$("#siguienteRegistro").click(validarCodigo);
 }
 
 $(document).ready(cargar);
 
 
-function numbersValidation(e) {
+function validaNumeros(e) {
 	var ascii = e.keyCode;
 	if (ascii == 8 || ascii == 9 || (ascii >= 48 && ascii <= 57)) {
 		return true;
@@ -24,15 +24,15 @@ function numbersValidation(e) {
 	}
 }
 
-function longNumbers() {
+function longCel() {
 	if ($(this).val().length == 9) {
-		$("#siguiente").attr("href", "verifynumber.html");
+		$("#siguiente").attr("href", "verificar-numero.html");
 	} else {
 		$("#siguiente").removeAttr("href");
 	}
 }
 
-function keyDisable() {
+function deshabilitarTecla() {
 	if ($(this).val().length < 9) {
 		return true;
 	} else {
@@ -40,7 +40,7 @@ function keyDisable() {
 	}
 }
 
-function codeGenerator(e) {
+function generadorCodigo(e) {
 	e.preventDefault();
 	var longitud = $("#numero").val().length;
 	var numeroAleatorio = Math.floor(Math.random() * 900) + 99;
@@ -60,7 +60,7 @@ function codeGenerator(e) {
 	}
 }
 
-function resend(e) {
+function reenviar(e) {
 	e.preventDefault();
 	var numeroAleatorio2 = Math.floor(Math.random() * 900) + 99;
 	window.localStorage.setItem("numberRandom2", numeroAleatorio2);
@@ -72,7 +72,7 @@ function resend(e) {
 	});
 }
 
-function longCode() {
+function longCodigo() {
 	if ($(this).val().length === 0) {
 		$("#siguiente").attr("href", "signup.html");
 	} else {
@@ -81,7 +81,7 @@ function longCode() {
 
 }
 
-function changeInput(e) {
+function cambiaInput(e) {
 	var long = $(this).val().length;
 	if (long == 1) {
 		$(this).next().focus();
@@ -91,7 +91,7 @@ function changeInput(e) {
 	}
 }
 
-function validateCode() {
+function validarCodigo() {
 	var concatCode = $(".codigo").eq(0).val() + $(".codigo").eq(1).val() + $(".codigo").eq(2).val();
 	if (concatCode === localStorage.getItem("numberRandom") || concatCode === localStorage.getItem("numberRandom2")) {
 		$("#siguienteValidar").attr("href", "signup.html");
@@ -122,4 +122,3 @@ function validateData() {
 		});
 	}
 }
-
