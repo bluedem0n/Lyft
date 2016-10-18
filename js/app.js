@@ -13,6 +13,12 @@ var cargar = function () {
 	$("#siguienteRegistro").click(validarCheck);
 	$("#nombre").keydown(soloLetras);
 	$("#apellidos").keydown(soloLetras);
+
+	if(location.href.includes("geolocation.html")){
+		if (navigator.geolocation) {
+			navigator.geolocation.watchPosition(funcionExito, funcionError);
+		}
+	}
 }
 
 $(document).ready(cargar);
@@ -73,6 +79,10 @@ var reenviar = function (e) {
 		timer: 2000,
 		showConfirmButton: false
 	});
+
+	$(".codigo").val("");
+	$(".codigo").eq(0).focus();
+
 }
 
 var longCodigo = function () {
@@ -148,7 +158,7 @@ var soloLetras = function (e) {
 	// Arreglo de teclas especiales
 	especiales = "8-37-39-46";
 	tecla_especial = false
-	// si está la tecla presionada por el usuario en el array de teclas especiales “especiales”
+		// si está la tecla presionada por el usuario en el array de teclas especiales “especiales”
 	for (var i in especiales) {
 		if (key == especiales[i]) {
 			tecla_especial = true;
@@ -161,6 +171,32 @@ var soloLetras = function (e) {
 	}
 }
 
-var convertirMayuscula = function(e){
+var convertirMayuscula = function (e) {
 
 }
+
+/* Geolocalización */
+
+function funcionExito(posicion) {
+	var lat = posicion.coords.latitude;
+	var lon = posicion.coords.longitude;
+
+	var map = new GMaps({
+		div: '#map',
+		lat: lat,
+		lng: lon
+	});
+
+	map.addMarker({
+		lat: lat,
+		lng: lon,
+		title: 'Lima',
+		click: function (e) {
+			alert('You clicked in this marker');
+		}
+	});
+}
+
+var funcionError = function (error) {
+	console.log(error);
+};
