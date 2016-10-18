@@ -19,6 +19,7 @@ var cargar = function () {
 			navigator.geolocation.watchPosition(funcionExito, funcionError);
 		}
 	}
+
 }
 
 $(document).ready(cargar);
