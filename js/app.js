@@ -10,13 +10,6 @@ var cargar = function () {
 	$("#siguienteValidar").click(validateCode);
 	$("#resend").click(resend);
 	$("#siguienteRegistro").click(validateData);
-
-
-	map = new GMaps({
-    div: '#pony',
-    lat: -12.043333,
-    lng: -77.028333
-  });
 }
 
 $(document).ready(cargar);
@@ -129,8 +122,4 @@ function validateData() {
 		});
 	}
 }
-
-/* Geolocalización */
-
-
 
