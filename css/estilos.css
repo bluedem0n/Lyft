@@ -139,27 +139,27 @@ img {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	z-index: 1;
 }
 
 .efecto {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	overflow: hidden;
-	z-index: 0;
+    position: absolute;
+    left: 47px;
+    margin-top: 2em;
+    overflow: hidden;
+    z-index: 2;
 }
-
 .icono-map {
-	font-size: 85px !important;
+	font-size: 70px !important;
 	color: #060A23;
 }
 
 .logo {
-	position: absolute;
-	z-index: 1;
-	margin-top: 2em;
-	width: 120px;
-	margin-left: 118px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 2em;
+    width: 120px;
+    margin-left: 132px;
 }
 .usuario{
 	width: 80px;

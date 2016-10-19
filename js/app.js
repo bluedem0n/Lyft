@@ -10,12 +10,10 @@ var cargar = function () {
 	$("#siguienteValidar").click(validarCodigo);
 	$("#resend").click(reenviar);
 	$("#siguienteRegistro").click(validarData);
-	$("#siguienteRegistro").click(validarCheck);
+	//$("#siguienteRegistro").click(validarCheck);
 	$(".datos").keydown(primeraMayuscula);
 	$("#nombre").keypress(soloLetras);
 	$("#apellidos").keypress(soloLetras);
-
-
 
 }
 
@@ -133,10 +131,10 @@ var validarData = function () {
 		});
 	}
 }
-
+/*
 var validarCheck = function () {
 	if ($("#checkbox").is(":checked")) {
-		$(this).attr("href", "geolocation.html");
+		
 	} else {
 		swal({
 			title: "Datos incorrectos",
@@ -145,7 +143,7 @@ var validarCheck = function () {
 			showConfirmButton: false
 		});
 	}
-}
+}*/
 
 var primeraMayuscula = function (e) {
 	var dato = $(this).val();
@@ -157,20 +155,16 @@ var primeraMayuscula = function (e) {
 
 var soloLetras = function (e) {
 	key = e.keyCode || e.which;
-	// fromCharCode(key) obteniene el caracter presionado por el usuario que añadiendo la sentencia toLowerCase() convertiríamos la letra a minúscula
 	tecla = String.fromCharCode(key).toLowerCase();
 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-	// Arreglo de teclas especiales
 	especiales = "8-37-39-46";
 	tecla_especial = false
-		// si está la tecla presionada por el usuario en el array de teclas especiales “especiales”
 	for (var i in especiales) {
 		if (key == especiales[i]) {
 			tecla_especial = true;
 			break;
 		}
 	}
-	// indexOf() que averigua si una cadena se encuentra dentro de otra cadena devolviendo como valor la posición de la cadena encontrada o el valor de -1 si es que no la encuentra , que para este caso queremos averiguar si el caracter presionado se encuentra entre las letras permitidas.
 	if (letras.indexOf(tecla) == -1 && !tecla_especial) {
 		return false;
 	}
