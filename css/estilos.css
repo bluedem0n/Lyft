@@ -7,14 +7,13 @@ body {
 
 a {
 	text-decoration: none;
-	color: #48a770;
+	color: #060B22;
 	outline: none;
 }
 
 a:hover,
 a:focus {
 	text-decoration: none !important;
-	color: #2c774b;
 	outline: none;
 }
 
@@ -50,9 +49,8 @@ img {
 /* Ingresar Numero */
 
 .icono {
-	font-size: 2em;
+	font-size: 2em !important;
 	padding: 27px 0px;
-	color: black;
 }
 
 .icono:hover {
@@ -197,18 +195,16 @@ img {
 }
 
 #ver-perfil {
-	margin-bottom: 1.5em;
-}
-
-.drive {
-	background-color: gray;
-	margin-top: 2.8em;
+	margin-top: 2.5em !important;
+	margin-bottom: 1.5em !important;
+	color: #060A23 !important;
 }
 
 .separador {
 	border: 1px solid gray;
 	margin-left: -15px;
 	margin-right: -15px;
+	margin-top: 1em;
 }
 
 .btn-map {
@@ -224,4 +220,21 @@ img {
 	letter-spacing: 2px;
 	border-radius: 0px;
 	z-index: 1;
+}
+
+
+/* Ver perfil */
+
+.user {
+	background: url(../img/user.jpg) no-repeat;
+	height: 200px;
+	margin-bottom: 2em;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-size: 100% 100%;
+}
+.nombre-perfil{
+	font-size: 26px;
 }

@@ -5,7 +5,6 @@ var cargar = function () {
 	$("#siguiente").click(generadorCodigo);
 	$(".codigo").keypress(longCodigo);
 	$(".codigo").keydown(validaNumeros);
-	$("#cel").text(window.localStorage.getItem("celu"));
 	$(".codigo").keyup(cambiaInput);
 	$("#siguienteValidar").click(validarCodigo);
 	$("#resend").click(reenviar);
@@ -13,7 +12,11 @@ var cargar = function () {
 	//$("#siguienteRegistro").click(validarCheck);
 	$(".datos").keydown(primeraMayuscula);
 	$("#nombre").keypress(soloLetras);
-	$("#apellidos").keypress(soloLetras);
+	$("#apellidos").blur(soloLetras);
+
+	$("#cel").text(window.localStorage.getItem("celu"));
+	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
+	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
 
 }
 
@@ -65,6 +68,7 @@ var generadorCodigo = function (e) {
 	}
 }
 
+
 var reenviar = function (e) {
 	e.preventDefault();
 	var numeroAleatorio2 = Math.floor(Math.random() * 900) + 99;
@@ -114,36 +118,41 @@ var validarCodigo = function () {
 }
 
 var validarData = function () {
-	var nombre = $("#nombre").val().trim().length;
-	var apellidos = $("#apellidos").val().trim().length;
-	var emailong = $("#email").val().trim().length;
-	var email = $("#email").val().trim();
-	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+		var nombre = $("#nombre").val().trim().length;
+		var apellidos = $("#apellidos").val().trim().length;
+		var emailong = $("#email").val().trim().length;
+		var email = $("#email").val().trim();
+		var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	
+		if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email)) {
+			
+				
+		window.localStorage.setItem("nom", $("#nombre").val());
+		window.localStorage.setItem("ape", $("#apellidos").val());
+			$(this).attr("href", "geolocation.html");
+		} else {
+			swal({
+				title: "Datos incorrectos",
+				text: "Ingresa correctamente tu información",
+				timer: 2000,
+				showConfirmButton: false
+			});
+		}
 
-	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email)) {
-		$(this).attr("href", "geolocation.html");
-	} else {
-		swal({
-			title: "Datos incorrectos",
-			text: "Ingresa correctamente tu información",
-			timer: 2000,
-			showConfirmButton: false
-		});
 	}
-}
-/*
-var validarCheck = function () {
-	if ($("#checkbox").is(":checked")) {
-		
-	} else {
-		swal({
-			title: "Datos incorrectos",
-			text: "Acepta los términos y condiciones",
-			timer: 2000,
-			showConfirmButton: false
-		});
-	}
-}*/
+	/*
+	var validarCheck = function () {
+		if ($("#checkbox").is(":checked")) {
+			
+		} else {
+			swal({
+				title: "Datos incorrectos",
+				text: "Acepta los términos y condiciones",
+				timer: 2000,
+				showConfirmButton: false
+			});
+		}
+	}*/
 
 var primeraMayuscula = function (e) {
 	var dato = $(this).val();
