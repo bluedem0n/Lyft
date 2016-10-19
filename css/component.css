@@ -96,14 +96,13 @@ body,
 }
 
 .st-menu h2 {
-	margin: 0;
-	padding: 1em;
-	color: rgba(0,0,0,0.4);
-	text-shadow: 0 0 1px rgba(0,0,0,0.1);
-	font-weight: 300;
-	font-size: 2em;
+    margin: 0;
+    padding: 0.8em;
+    color: rgba(0,0,0,0.4);
+    text-shadow: 0 0 1px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    text-align: center;
 }
-
 .st-menu ul li a {
 	display: block;
 	padding: 1em 1em 1em 1.2em;

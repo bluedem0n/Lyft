@@ -4,6 +4,17 @@ body {
 	line-height: 1.5;
 	color: #060B22;
 }
+a {
+	text-decoration: none;
+	color: #48a770;
+	outline: none;
+}
+
+a:hover, a:focus {
+	text-decoration: none !important;
+	color: #2c774b;
+	outline: none;
+}
 
 img {
 	width: 22px;
@@ -120,6 +131,7 @@ img {
 .input-group {
 	margin-bottom: 15px;
 }
+/* MAPA */
 
 #mapid  {
 	position: absolute;
@@ -149,14 +161,10 @@ img {
 	width: 120px;
 	margin-left: 118px;
 }
-
-a {
-	text-decoration: none;
-	color: #48a770;
-	outline: none;
-}
-
-a:hover, a:focus {
-	color: #2c774b;
-	outline: none;
+.usuario{
+	width: 80px;
+    height: 80px;
+    border-radius: 50%;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }

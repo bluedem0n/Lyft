@@ -11,10 +11,10 @@ var cargar = function () {
 	$("#resend").click(reenviar);
 	$("#siguienteRegistro").click(validarData);
 	$("#siguienteRegistro").click(validarCheck);
-/*
-	$("#nombre").keydown(soloLetras);
-	$("#apellidos").keydown(soloLetras);
-*/
+	$(".datos").keydown(primeraMayuscula);
+	$("#nombre").keypress(soloLetras);
+	$("#apellidos").keypress(soloLetras);
+
 
 
 }
@@ -147,7 +147,15 @@ var validarCheck = function () {
 	}
 }
 
-/*var soloLetras = function (e) {
+var primeraMayuscula = function (e) {
+	var dato = $(this).val();
+	var letraMayuscula = dato.charAt(0).toUpperCase(); // Saca la primera letra y la vuelve Mayuscula
+	// S //       +  Toda la palabra
+	var concatenarDato = letraMayuscula + dato.substr(1, dato.length);
+	$(this).val(concatenarDato);
+}
+
+var soloLetras = function (e) {
 	key = e.keyCode || e.which;
 	// fromCharCode(key) obteniene el caracter presionado por el usuario que añadiendo la sentencia toLowerCase() convertiríamos la letra a minúscula
 	tecla = String.fromCharCode(key).toLowerCase();
@@ -166,4 +174,4 @@ var validarCheck = function () {
 	if (letras.indexOf(tecla) == -1 && !tecla_especial) {
 		return false;
 	}
-}*/
+}
