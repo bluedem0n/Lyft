@@ -8,28 +8,27 @@ var cargarPagina = function () {
 
 $(document).ready(cargarPagina);
 
-/* Geolocalización */
+var funcionExito = function (posicion) {
 
-function funcionExito(posicion) {
-	var lat = posicion.coords.latitude;
-	var lon = posicion.coords.longitude;
+    var lat = posicion.coords.latitude;
+    var lon = posicion.coords.longitude;
 
-	var map = new GMaps({
-		div: '#map',
-		lat: lat,
-		lng: lon
-	});
+    var mymap = L.map('mapid').setView([lat, lon], 13);
 
-	map.addMarker({
-		lat: lat,
-		lng: lon,
-		title: 'Lima',
-		click: function (e) {
-			alert('You clicked in this marker');
-		}
-	});
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+        maxZoom: 18
+    }).addTo(mymap);
+
+    L.control.scale().addTo(mymap);
+
+    L.marker([lat, lon], {
+            draggable: true
+        }).addTo(mymap)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
 }
 
 var funcionError = function (error) {
-	console.log(error);
+    console.log(error);
 };
