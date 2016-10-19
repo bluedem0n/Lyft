@@ -14,17 +14,30 @@
 	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
 </head>
 
 <body>
 	<div id="st-container" class="st-container">
 		<div class="st-pusher">
 			<nav class="st-menu st-effect-6" id="menu-6">
-				<img src="img/user.jpg" class="usuario center-block">
-				<h2>Sthefany</h2>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-4">
+							<img src="img/user.jpg" class="usuario center-block">
+						</div>
+						<div class="col-xs-6 perfil">
+							<p id="nombre-perfil">Sthefany Floriano</p>
+							<p id="ver-perfil">View Profile</p>
+						</div>
+						
+					</div>
+					<div class="separador"></div>
+				</div>
+				
 				<ul>
 					<li>
-						<a href="#"> <i class="material-icons">add_location</i> Home</a>
+						<a href="#"> <i class="material-icons">pin_drop</i>  Home</a>
 					</li>
 					<li>
 						<a href="#"> <i class="material-icons">card_giftcard</i> Free Rides</a>
@@ -36,24 +49,33 @@
 						<a href="#"> <i class="material-icons">payment</i> Payment</a>
 					</li>
 					<li>
+						<a href="#"> <i class="material-icons">local_atm</i> Promos</a>
+					</li>
+					<li>
 						<a href="#"> <i class="material-icons">add_alert</i> Help</a>
 					</li>
 					<li>
 						<a href="#"> <i class="material-icons">settings</i> Setting</a>
+					</li>
+					<li>
+						<a href="#" class="drive"> <i class="material-icons">local_taxi</i> Sign up to drive</a>
 					</li>
 				</ul>
 			</nav>
 			<div class="st-content">
 				<div class="st-content-inner">
 					<div id="mapid"></div>
-					<img class="logo" src="img/logo.png">
 					<div class="main clearfix">
 						<div id="st-trigger-effects" class="column">
 							<a href="#" data-effect="st-effect-6" class="efecto">
 								<i class="material-icons icono-map">account_circle</i>
 							</a>
+							<img class="logo" src="img/logo3.png">
+							
+							<i class="material-icons efecto icono-gift">card_giftcard</i>
 						</div>
 					</div>
+					<a id="#" class="btn boton btn-map container-fluid" type="submit"> Set pickup </a>
 				</div>
 			</div>
 		</div>

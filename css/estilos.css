@@ -4,13 +4,15 @@ body {
 	line-height: 1.5;
 	color: #060B22;
 }
+
 a {
 	text-decoration: none;
 	color: #48a770;
 	outline: none;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
 	text-decoration: none !important;
 	color: #2c774b;
 	outline: none;
@@ -131,9 +133,11 @@ img {
 .input-group {
 	margin-bottom: 15px;
 }
+
+
 /* MAPA */
 
-#mapid  {
+#mapid {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -143,28 +147,81 @@ img {
 }
 
 .efecto {
-    position: absolute;
-    left: 47px;
-    margin-top: 2em;
-    overflow: hidden;
-    z-index: 2;
+	position: absolute;
+	left: 47px;
+	overflow: hidden;
+	z-index: 2;
 }
-.icono-map {
-	font-size: 70px !important;
+
+.icono-gift {
+	font-size: 30px !important;
 	color: #060A23;
+	left: 10em;
+	margin-top: 0.3em;
+	border: 1px solid gray;
+	border-radius: 50%;
+	background-color: white;
+	padding: 4px;
+}
+
+.icono-map {
+	font-size: 45px !important;
+	color: #060A23;
+	margin-top: 0.2em;
 }
 
 .logo {
-    position: absolute;
-    z-index: 1;
-    margin-top: 2em;
-    width: 120px;
-    margin-left: 132px;
+	position: absolute;
+	z-index: 1;
+	margin-top: 1em;
+	width: 66px;
+	margin-left: 11em;
 }
-.usuario{
-	width: 80px;
-    height: 80px;
-    border-radius: 50%;
-	margin-bottom: 10px;
-	margin-top: 10px;
+
+.usuario {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin-left: -5px;
+	margin-top: 2em;
+}
+
+.perfil {
+	margin-top: 2.5em;
+	font-size: 16px;
+	white-space: nowrap;
+}
+
+#nombre-perfil {
+	font-weight: 600;
+}
+
+#ver-perfil {
+	margin-bottom: 1.5em;
+}
+
+.drive {
+	background-color: gray;
+	margin-top: 2.8em;
+}
+
+.separador {
+	border: 1px solid gray;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.btn-map {
+	padding: 0 20px;
+	background-color: #108F66;
+	border: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 50px;
+	color: #fff;
+	transition: all .3s;
+	width: 100%;
+	letter-spacing: 2px;
+	border-radius: 0px;
+	z-index: 1;
 }
