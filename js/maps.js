@@ -17,7 +17,7 @@ var funcionExito = function (posicion) {
 	var lat = posicion.coords.latitude;
 	var lon = posicion.coords.longitude;
 
-	 map = new GMaps({
+	map = new GMaps({
 		div: '#map',
 		lat: lat,
 		lng: lon,
@@ -31,6 +31,25 @@ var funcionExito = function (posicion) {
 		click: function (e) {
 			alert('You clicked in this marker');
 		}
+	});
+
+	var content = $("#direccion");
+	var dir = "";
+	var latlng = new google.maps.LatLng(lat, lon);
+	geocoder = new google.maps.Geocoder();
+	geocoder.geocode({
+		"latLng": latlng
+	}, function (resultado, estado) {
+		if (estado == google.maps.GeocoderStatus.OK) {
+			if (resultado[0]) {
+				dir = resultado[0].formatted_address;
+			} else {
+				dir = "No se ha podido obtener ninguna dirección en esas coordenadas.";
+			}
+		} else {
+			dir = "El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + estado;
+		}
+		content.text(dir);
 	});
 
 }
@@ -48,6 +67,7 @@ var buscarDireccion = function () {
 			}
 		}
 	});
+	$('#address').val("");
 }
 
 var funcionError = function (error) {

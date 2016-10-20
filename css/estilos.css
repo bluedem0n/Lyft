@@ -149,7 +149,15 @@ img {
 	right: 0;
 	z-index: 1;
 }
-
+#direccion {
+    position: absolute;
+    bottom: 100px;
+    padding: 0;
+    background: black;
+    z-index: 2;
+    left: 15px;
+    color: white;
+}
 .efecto {
 	position: absolute;
 	left: 47px;
