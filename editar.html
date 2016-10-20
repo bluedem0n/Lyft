@@ -18,32 +18,20 @@
 </head>
 
 <body>
-	<header class="container-fluid">
-		<div class="row">
-			<div class="col-xs-2">
-				<a href="ingresar-numero.html" class="glyphicon glyphicon-chevron-left icono" aria-hidden="true"></a>
-			</div>
-			<div class="col-xs-8 text-center">
-				<h3>Verify phone number</h3>
-				<h5>Join now for free ride credit</h5>
-			</div>
-		</div>
-		<hr>
-	</header>
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3">
-					<h3>LAB-</h3>
+				<div class="col-xs-12">
+				<video id="video" width="640" height="480" autoplay></video>
 				</div>
-				<input type="tel" class="col-xs-3 codigo">
-				<input type="tel" class="col-xs-3 codigo">
-				<input type="tel" class="col-xs-3 codigo">
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+				<canvas id="canvas" width="640" height="480"></canvas>
+				</div>
 			</div>
 		</div>
-		<p class="text-center"> Enter the code sent to +51 <span id="cel"> </span></p>
-		<button type="button" id="resend" class="btn btn-default center-block">Resend the code </button>
-		<a id="siguienteValidar" class="btn boton btn-next container-fluid" type="submit"> Next </a>
+		<a id="snap" class="btn boton btn-next container-fluid" type="submit"> Update </a>
 	</section>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

@@ -15,7 +15,8 @@ var cargar = function () {
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
 	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
-
+	tomarFoto();
+	$("#snap").click(tomarFoto);
 }
 
 $(document).ready(cargar);
@@ -163,4 +164,21 @@ var soloLetras = function (e) {
 	if (letras.indexOf(tecla) == -1 && !tecla_especial) {
 		return false;
 	}
+}
+
+var tomarFoto = function (e) {
+	var video = document.getElementById("video");
+	var context = $("#canvas")[0].getContext('2d');
+	var canvas = document.getElementById("canvas");
+
+	context.drawImage(video, 0, 0, 640, 480);
+	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+		navigator.mediaDevices.getUserMedia({
+			video: true
+		}).then(function (stream) {
+			video.src = window.URL.createObjectURL(stream);
+			video.play();
+		});
+	}
+
 }
