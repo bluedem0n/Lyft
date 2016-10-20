@@ -15,6 +15,7 @@ var cargar = function () {
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
 	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
+	$("#fecha").text(window.localStorage.getItem("fecha"));
 	tomarFoto();
 	$("#snap").click(tomarFoto);
 	$("#addNote").click(subirFoto);
@@ -165,9 +166,13 @@ var soloLetras = function (e) {
 	if (letras.indexOf(tecla) == -1 && !tecla_especial) {
 		return false;
 	}
+	var meses = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+	var f = new Date();
+	var fecha = "JOINED " + meses[f.getMonth()].toUpperCase() + " " + f.getFullYear();
+	inicio = localStorage.setItem("fecha", fecha);
 }
 
-/*var tomarFoto = function (e) {
+var tomarFoto = function (e) {
 	var video = document.getElementById("video");
 	var context = $("#canvas")[0].getContext('2d');
 	var canvas = document.getElementById("canvas");
@@ -181,9 +186,8 @@ var soloLetras = function (e) {
 		});
 	}
 
-}*/
-
-var limpiarLocalStorage = function() {
+}
+var limpiarLocalStorage = function () {
 	if (confirm("Seguro que deseas limpiar?")) {
 		window.localStorage.clear();
 		location.reload();
