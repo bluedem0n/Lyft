@@ -1,5 +1,7 @@
 var cargarPagina = function () {
+
 	$("#buscar").click(buscarDireccion);
+
 	if (location.href.includes("geolocation.html")) {
 		if (navigator.geolocation) {
 			navigator.geolocation.watchPosition(funcionExito, funcionError);
