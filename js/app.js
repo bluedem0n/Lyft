@@ -15,8 +15,8 @@ var cargar = function () {
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
 	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
-/*	tomarFoto();
-	$("#snap").click(tomarFoto);*/
+	tomarFoto();
+	$("#snap").click(tomarFoto);
 	$("#addNote").click(subirFoto);
 	$("#siguienteEditar").click(nuevaData);
 	$("#clear").click(limpiarLocalStorage);
