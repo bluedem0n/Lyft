@@ -115,31 +115,30 @@ var validarCodigo = function () {
 }
 
 var validarData = function () {
-		var nombre = $("#nombre").val().trim().length;
-		var apellidos = $("#apellidos").val().trim().length;
-		var emailong = $("#email").val().trim().length;
-		var email = $("#email").val().trim();
-		var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-	
-		var validacheck = $("#checkbox").is(":checked");
+	var nombre = $("#nombre").val().trim().length;
+	var apellidos = $("#apellidos").val().trim().length;
+	var emailong = $("#email").val().trim().length;
+	var email = $("#email").val().trim();
+	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-		if ( nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email) && validacheck) {
-			
-				
+	var validacheck = $("#checkbox").is(":checked");
+
+	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email) && validacheck) {
+
+
 		window.localStorage.setItem("nom", $("#nombre").val());
 		window.localStorage.setItem("ape", $("#apellidos").val());
-			$(this).attr("href", "geolocation.html");
-		} else {
-			swal({
-				title: "Datos incorrectos",
-				text: "Ingresa correctamente tu información",
-				timer: 2000,
-				showConfirmButton: false
-			});
-		}
-
+		$(this).attr("href", "geolocation.html");
+	} else {
+		swal({
+			title: "Datos incorrectos",
+			text: "Ingresa correctamente tu información",
+			timer: 2000,
+			showConfirmButton: false
+		});
 	}
 
+}
 
 var primeraMayuscula = function (e) {
 	var dato = $(this).val();
@@ -165,4 +164,3 @@ var soloLetras = function (e) {
 		return false;
 	}
 }
-
