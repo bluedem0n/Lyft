@@ -1,3 +1,25 @@
+var cargar = function () {
+	$("#numero").keydown(validaNumeros);
+	$("#numero").keyup(longCel);
+	$("#numero").keypress(deshabilitarTecla);
+	$("#siguiente").click(generadorCodigo);
+	$(".codigo").keypress(longCodigo);
+	$(".codigo").keydown(validaNumeros);
+	$(".codigo").keyup(cambiaInput);
+	$("#siguienteValidar").click(validarCodigo);
+	$("#resend").click(reenviar);
+	$("#siguienteRegistro").click(validarData);
+	$(".datos").keyup(primeraMayuscula);
+	$("#nombre").keypress(soloLetras);
+	$("#apellidos").keypress(soloLetras);
+	$("#cel").text(window.localStorage.getItem("celu"));
+	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
+	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
+
+}
+
+$(document).ready(cargar);
+
 var validaNumeros = function (e) {
 	var ascii = e.keyCode;
 	if (ascii == 8 || ascii == 9 || (ascii >= 48 && ascii <= 57)) {
@@ -99,7 +121,9 @@ var validarData = function () {
 		var email = $("#email").val().trim();
 		var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 	
-		if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email)) {
+		var validacheck = $("#checkbox").is(":checked");
+
+		if ( nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email) && validacheck) {
 			
 				
 		window.localStorage.setItem("nom", $("#nombre").val());
@@ -115,19 +139,7 @@ var validarData = function () {
 		}
 
 	}
-	/*
-	var validarCheck = function () {
-		if ($("#checkbox").is(":checked")) {
-			
-		} else {
-			swal({
-				title: "Datos incorrectos",
-				text: "Acepta los términos y condiciones",
-				timer: 2000,
-				showConfirmButton: false
-			});
-		}
-	}*/
+
 
 var primeraMayuscula = function (e) {
 	var dato = $(this).val();
@@ -153,26 +165,4 @@ var soloLetras = function (e) {
 		return false;
 	}
 }
-var cargar = function () {
-	$("#numero").keydown(validaNumeros);
-	$("#siguiente").keyup(longCel);
-	$("#numero").keypress(deshabilitarTecla);
-	$("#siguiente").click(generadorCodigo);
-	$(".codigo").keypress(longCodigo);
-	$(".codigo").keydown(validaNumeros);
-	$(".codigo").keyup(cambiaInput);
-	$("#siguienteValidar").click(validarCodigo);
-	$("#resend").click(reenviar);
-	$("#siguienteRegistro").click(validarData);
-	//$("#siguienteRegistro").click(validarCheck);
-	$(".datos").blur(primeraMayuscula);
-/*	$("#nombre").keypress(soloLetras);
-	$("#apellidos").keypress(soloLetras);*/
 
-	$("#cel").text(window.localStorage.getItem("celu"));
-	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
-	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
-
-}
-
-$(document).ready(cargar);
