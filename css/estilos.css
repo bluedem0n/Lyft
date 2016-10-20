@@ -21,10 +21,11 @@ img {
 	width: 22px;
 	margin-right: 10px;
 }
-.editado{
+
+.editado {
 	width: 70px;
-    height: 70px;
-    border-radius: 50%;
+	height: 70px;
+	border-radius: 50%;
 }
 
 .text-center h3 {
@@ -140,7 +141,7 @@ img {
 
 /* MAPA */
 
-#mapid {
+#map {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -159,7 +160,7 @@ img {
 .icono-gift {
 	font-size: 30px !important;
 	color: #060A23;
-	left: 10em;
+	left: 9em;
 	margin-top: 0.3em;
 	border: 1px solid gray;
 	border-radius: 50%;
@@ -175,10 +176,17 @@ img {
 
 .logo {
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	margin-top: 1em;
 	width: 66px;
-	margin-left: 11em;
+	margin-left: 10em;
+}
+
+.input {
+	position: absolute;
+	z-index: 1;
+	bottom: 64px;
+	left: 65px;
 }
 
 .usuario {
@@ -240,59 +248,68 @@ img {
 	bottom: 0;
 	background-size: 100% 100%;
 }
-.nombre-perfil{
+
+.nombre-perfil {
 	font-size: 26px;
 }
+
 .join-date {
-    margin: 0px 0.8em;
-    padding: 2% 0;
-    border-radius: 5px;
-    background-color: #23527c;
-    color: white;
+	margin: 0px 0.8em;
+	padding: 2% 0;
+	border-radius: 5px;
+	background-color: #23527c;
+	color: white;
 }
-.info{
+
+.info {
 	margin: 1.2em;
-    font-size: 16px;
+	font-size: 16px;
 }
-.ml-8{
+
+.ml-8 {
 	margin-left: 0.8em;
 }
+
 .camara {
-    float: right;
-    margin-top: 2.5em;
-    margin-right: 0.5em;
+	float: right;
+	margin-top: 2.5em;
+	margin-right: 0.5em;
 }
+
+
 /* Editar Usuario */
 
 #video {
-    width: 304px;
-    height: 245px;
-    margin-top: 10em;
-    margin-left: 14px;
+	width: 304px;
+	height: 245px;
+	margin-top: 10em;
+	margin-left: 14px;
 }
+
 #canvas {
-    width: 191px;
-    height: 168px;
-    margin-top: 1em;
-    margin-left: 75px;
+	width: 191px;
+	height: 168px;
+	margin-top: 1em;
+	margin-left: 75px;
 }
 
 .btn-file {
-  position: relative;
-  overflow: hidden;
-  }
+	position: relative;
+	overflow: hidden;
+}
+
 .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
 }
