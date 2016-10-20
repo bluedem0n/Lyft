@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lyft</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<!-- Bootstrap Core CSS --->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="css/estilos.css" rel="stylesheet">
+	<link href="css/queries.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/alert.css" />
+	<link rel="stylesheet" href="css/sweetalert.css" />
+	<!-- Custom Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2">
+				<a href="verificar-numero.html" class="glyphicon glyphicon-chevron-left icono" aria-hidden="true"></a>
+			</div>
+			<div class="col-xs-8 text-center">
+				<h3>Sign Up</h3>
+				<h5>Join now for free ride credit</h5>
+			</div>
+		</div>
+		<hr>
+	</header>
+	<div class="container-fluid">
+		<form class="form-horizontal" role="form">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+						<div class="form-control">
+							<input type="text" name="nombre" id="nombre" class="datos" placeholder="Nombre">
+							<input type="text" name="apellidos" id="apellidos" class="datos" placeholder="Apellidos">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input type="text" class="form-control" id="email" placeholder="Correo">
+					</div>
+				</div>
+			</div>
+			<div class="input-group terminos">
+				<div class="checkbox">
+					<label>
+						<input id="checkbox" type="checkbox" name="remember" value="1"> I agree to Lyft's <b class="terms"> Terms of Service </b>
+					</label>
+				</div>
+			</div>
+		</form>
+	</div>
+	<a id="siguienteRegistro" class="btn boton btn-next container-fluid" type="submit"> Next </a>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/sweetalert-dev.js"></script>
+</body>
+
+</html>

@@ -170,7 +170,6 @@ var tomarFoto = function (e) {
 	var video = document.getElementById("video");
 	var context = $("#canvas")[0].getContext('2d');
 	var canvas = document.getElementById("canvas");
-
 	context.drawImage(video, 0, 0, 640, 480);
 	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 		navigator.mediaDevices.getUserMedia({
