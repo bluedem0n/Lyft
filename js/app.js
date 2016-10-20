@@ -16,8 +16,6 @@ var cargar = function () {
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
 	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
 	$("#fecha").text(window.localStorage.getItem("fecha"));
-	tomarFoto();
-	$("#snap").click(tomarFoto);
 	$("#addNote").click(subirFoto);
 	$("#siguienteEditar").click(nuevaData);
 	$("#clear").click(limpiarLocalStorage);
@@ -172,21 +170,6 @@ var soloLetras = function (e) {
 	inicio = localStorage.setItem("fecha", fecha);
 }
 
-var tomarFoto = function (e) {
-	var video = document.getElementById("video");
-	var context = $("#canvas")[0].getContext('2d');
-	var canvas = document.getElementById("canvas");
-	context.drawImage(video, 0, 0, 640, 480);
-	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-		navigator.mediaDevices.getUserMedia({
-			video: true
-		}).then(function (stream) {
-			video.src = window.URL.createObjectURL(stream);
-			video.play();
-		});
-	}
-
-}
 var limpiarLocalStorage = function () {
 	if (confirm("Seguro que deseas limpiar?")) {
 		window.localStorage.clear();
