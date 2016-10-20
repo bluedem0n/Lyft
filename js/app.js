@@ -1,28 +1,3 @@
-var cargar = function () {
-	$("#numero").keydown(validaNumeros);
-	$("#numero").keyup(longCel);
-	$("#numero").keypress(deshabilitarTecla);
-	$("#siguiente").click(generadorCodigo);
-	$(".codigo").keypress(longCodigo);
-	$(".codigo").keydown(validaNumeros);
-	$(".codigo").keyup(cambiaInput);
-	$("#siguienteValidar").click(validarCodigo);
-	$("#resend").click(reenviar);
-	$("#siguienteRegistro").click(validarData);
-	//$("#siguienteRegistro").click(validarCheck);
-	$(".datos").blur(primeraMayuscula);
-/*	$("#nombre").keypress(soloLetras);
-	$("#apellidos").keypress(soloLetras);*/
-
-	$("#cel").text(window.localStorage.getItem("celu"));
-	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
-	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
-
-}
-
-$(document).ready(cargar);
-
-
 var validaNumeros = function (e) {
 	var ascii = e.keyCode;
 	if (ascii == 8 || ascii == 9 || (ascii >= 48 && ascii <= 57)) {
@@ -178,3 +153,26 @@ var soloLetras = function (e) {
 		return false;
 	}
 }
+var cargar = function () {
+	$("#numero").keydown(validaNumeros);
+	$("#siguiente").keyup(longCel);
+	$("#numero").keypress(deshabilitarTecla);
+	$("#siguiente").click(generadorCodigo);
+	$(".codigo").keypress(longCodigo);
+	$(".codigo").keydown(validaNumeros);
+	$(".codigo").keyup(cambiaInput);
+	$("#siguienteValidar").click(validarCodigo);
+	$("#resend").click(reenviar);
+	$("#siguienteRegistro").click(validarData);
+	//$("#siguienteRegistro").click(validarCheck);
+	$(".datos").blur(primeraMayuscula);
+/*	$("#nombre").keypress(soloLetras);
+	$("#apellidos").keypress(soloLetras);*/
+
+	$("#cel").text(window.localStorage.getItem("celu"));
+	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
+	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
+
+}
+
+$(document).ready(cargar);
