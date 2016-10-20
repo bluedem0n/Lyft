@@ -15,8 +15,11 @@ var cargar = function () {
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
 	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
-	tomarFoto();
-	$("#snap").click(tomarFoto);
+/*	tomarFoto();
+	$("#snap").click(tomarFoto);*/
+	$("#addNote").click(subirFoto);
+	$("#siguienteEditar").click(nuevaData);
+	$("#clear").click(limpiarLocalStorage);
 }
 
 $(document).ready(cargar);
@@ -125,8 +128,6 @@ var validarData = function () {
 	var validacheck = $("#checkbox").is(":checked");
 
 	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email) && validacheck) {
-
-
 		window.localStorage.setItem("nom", $("#nombre").val());
 		window.localStorage.setItem("ape", $("#apellidos").val());
 		$(this).attr("href", "geolocation.html");
@@ -166,7 +167,7 @@ var soloLetras = function (e) {
 	}
 }
 
-var tomarFoto = function (e) {
+/*var tomarFoto = function (e) {
 	var video = document.getElementById("video");
 	var context = $("#canvas")[0].getContext('2d');
 	var canvas = document.getElementById("canvas");
@@ -177,6 +178,49 @@ var tomarFoto = function (e) {
 		}).then(function (stream) {
 			video.src = window.URL.createObjectURL(stream);
 			video.play();
+		});
+	}
+
+}*/
+
+var limpiarLocalStorage = function() {
+	if (confirm("Seguro que deseas limpiar?")) {
+		window.localStorage.clear();
+		location.reload();
+	}
+	return false;
+}
+
+var subirFoto = function () {
+	var foto = document.getElementById("file").files[0];
+	var imgUrl;
+	var reader = new FileReader();
+	reader.onload = function (e) {
+		var imgURL = reader.result;
+		$('#imagen').prepend("<img class='editado' src=" + imgURL + "></p> </div>");
+		var imagenCargada = $('#imagen').html();
+		localStorage.setItem('imagenGuardada', imagenCargada);
+		saveDataToLocalStorage(imgURL);
+	}
+	reader.readAsDataURL(foto);
+	return false;
+}
+
+$('#imagen').html(localStorage.getItem('imagenGuardada'));
+
+var nuevaData = function () {
+	var nombre = $("#nombre").val().trim().length;
+	var apellidos = $("#apellidos").val().trim().length;
+	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30) {
+		window.localStorage.setItem("nom", $("#nombre").val());
+		window.localStorage.setItem("ape", $("#apellidos").val());
+		$(this).attr("href", "geolocation.html");
+	} else {
+		swal({
+			title: "Datos incorrectos",
+			text: "Ingresa correctamente tu información",
+			timer: 2000,
+			showConfirmButton: false
 		});
 	}
 
