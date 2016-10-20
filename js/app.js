@@ -10,9 +10,9 @@ var cargar = function () {
 	$("#resend").click(reenviar);
 	$("#siguienteRegistro").click(validarData);
 	//$("#siguienteRegistro").click(validarCheck);
-	$(".datos").keydown(primeraMayuscula);
-	$("#nombre").keypress(soloLetras);
-	$("#apellidos").blur(soloLetras);
+	$(".datos").blur(primeraMayuscula);
+/*	$("#nombre").keypress(soloLetras);
+	$("#apellidos").keypress(soloLetras);*/
 
 	$("#cel").text(window.localStorage.getItem("celu"));
 	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
