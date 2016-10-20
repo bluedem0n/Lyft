@@ -22,7 +22,6 @@ var cargar = function () {
 }
 
 $(document).ready(cargar);
-
 var validaNumeros = function (e) {
 	var ascii = e.keyCode;
 	if (ascii == 8 || ascii == 9 || (ascii >= 48 && ascii <= 57)) {
@@ -31,7 +30,6 @@ var validaNumeros = function (e) {
 		return false;
 	}
 }
-
 var longCel = function () {
 	if ($(this).val().length == 9) {
 		$("#siguiente").attr("href", "verificar-numero.html");
@@ -191,6 +189,7 @@ var subirFoto = function () {
 	}
 	reader.readAsDataURL(foto);
 	return false;
+	
 }
 
 $('#imagen').html(localStorage.getItem('imagenGuardada'));

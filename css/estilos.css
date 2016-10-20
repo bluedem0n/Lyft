@@ -17,17 +17,6 @@ a:focus {
 	outline: none;
 }
 
-img {
-	width: 22px;
-	margin-right: 10px;
-}
-
-.editado {
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-}
-
 .text-center h3 {
 	font-weight: bold;
 }
@@ -245,17 +234,6 @@ img {
 
 
 /* Ver perfil */
-
-.user {
-	background: url(../img/user.jpg) no-repeat;
-	height: 200px;
-	margin-bottom: 2em;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background-size: 100% 100%;
-}
 
 .nombre-perfil {
 	font-size: 26px;
