@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<title>Lyft</title>
+	</head>
+	<body>
+		<div class="circulo izq"  id="contacto">
+			<a class="glyphicon glyphicon-user icons"></a>
+		</div>
+		<img src="img/logo2.png" class="logo2">
+		<div class="circulo dere">
+			<a class="glyphicon glyphicon-gift icons"></a>
+		</div>
+		<div class="pack-btns">
+			<div class="borde dir">
+				<input type="text" id="dire" class="sn-borde">
+			</div>
+			<div class="borde pic" id="pick">Set Pickup</div>
+		</div>
+		<div class="semiperfil ocultar" id="mitad">
+			<div class="fondoBlanco">
+				<div class="row borde-inf">
+					<div class="row text-center margen-aa">
+						<img id="semiFoto" src="img/foto.jpg" class="circuloFoto">
+					</div>
+					<div class="row text-center">
+						<h3 id="nombre-perfil" class="text-center name">Name</h3>
+						<h3 id="apellido-perfil" class="text-center name">Last Name</h3>
+					</div>
+					<div class="row text-center margen-aa">
+						<a href="perfil.html">View profile</a>
+					</div>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-map-marker icn-mgd"></span>
+					<p class="mg-t">Home</p>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-gift icn-mgd"></span>
+					<p class="mg-t">Free Rides</p>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-road icn-mgd"></span>
+					<p class="mg-t">Ride history</p>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-credit-card icn-mgd"></span>
+					<p class="mg-t">Payment</p>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-question-sign icn-mgd"></span>
+					<p class="mg-t">Help</p>
+				</div>
+				<div class="row margenes">
+					<span class="glyphicon glyphicon-cog icn-mgd"></span>
+					<p class="mg-t">Settings</p>
+				</div>
+			</div>
+		</div>
+		<div id="map"></div>
+		<script type="text/javascript" src="js/sweetalert-dev.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzSrj1KrTS7nuG8r5vcxi-x_Eqcj8apiQ" async defer></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html

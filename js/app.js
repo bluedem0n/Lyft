@@ -1,4 +1,11 @@
 var cargar = function () {
+	var locationhref = location.href.indexOf("map.html");
+	if (locationhref > 0) {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
+		}
+	}
+
 	$("#numero").keydown(validaNumeros);
 	$("#numero").keyup(longCel);
 	$("#numero").keypress(deshabilitarTecla);
@@ -13,16 +20,34 @@ var cargar = function () {
 	$("#nombre").keypress(soloLetras);
 	$("#apellidos").keypress(soloLetras);
 	$("#cel").text(window.localStorage.getItem("celu"));
-	$("#nombre-perfil").text(window.localStorage.getItem("nom"));
-	$("#apellido-perfil").text(window.localStorage.getItem("ape"));
+	$("#nombre-perfil").text(window.localStorage.getItem("nombre"));
+	$("#apellido-perfil").text(window.localStorage.getItem("apellido"));
 	$("#fecha").text(window.localStorage.getItem("fecha"));
-	$("#addNote").click(subirFoto);
-	$("#siguienteEditar").click(nuevaData);
-	$("#clear").click(limpiarLocalStorage);
+	$("#contacto").click(aparecePerfil);
+	$("#mitad").click(apareceMap);
+	$("#dire").dblclick(limparInput);
+	$("#inputFile").change(cambiarFoto);
+	$("#pick").click(generarDirec);
+	$("#done").click(nuevaData);
+
+	$("#username").text(localStorage.getItem("nombre") + " " + localStorage.getItem("apellido"));
+
+	var fotoPerfil = localStorage.getItem("guarFoto");
+	var nombre = localStorage.getItem("nombre");
+	var apellido = localStorage.getItem("apellido");
+	var correo = localStorage.getItem("email");
+	if (fotoPerfil != null) {
+		$("#fotoGuar").attr("src", fotoPerfil);
+		$("#fotoprev").attr("src", fotoPerfil);
+		$("#semiFoto").attr("src", fotoPerfil);
+	}
+	if (nombre != null && apellido != null && correo != null) {
+		$("#name").val(nombre);
+		$("#lastname").val(apellido);
+		$("#email").val(correo);
+	}
 }
-
 $(document).ready(cargar);
-
 var validaNumeros = function (e) {
 	var ascii = e.keyCode;
 	if (ascii == 8 || ascii == 9 || (ascii >= 48 && ascii <= 57)) {
@@ -31,7 +56,6 @@ var validaNumeros = function (e) {
 		return false;
 	}
 }
-
 var longCel = function () {
 	if ($(this).val().length == 9) {
 		$("#siguiente").attr("href", "verificar-numero.html");
@@ -127,9 +151,9 @@ var validarData = function () {
 	var validacheck = $("#checkbox").is(":checked");
 
 	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30 && emailong > 5 && emailong < 50 && regexEmail.test(email) && validacheck) {
-		window.localStorage.setItem("nom", $("#nombre").val());
-		window.localStorage.setItem("ape", $("#apellidos").val());
-		$(this).attr("href", "geolocation.html");
+		window.localStorage.setItem("nombre", $("#nombre").val());
+		window.localStorage.setItem("apellido", $("#apellidos").val());
+		$(this).attr("href", "map.html");
 	} else {
 		swal({
 			title: "Datos incorrectos",
@@ -138,7 +162,14 @@ var validarData = function () {
 			showConfirmButton: false
 		});
 	}
+	var obtenerName = $("#nombre").val();
+	localStorage.setItem("nombre", obtenerName);
 
+	var obtenerLastName = $("#apellidos").val();
+	localStorage.setItem("apellido", obtenerLastName);
+
+	var obtenerEmail = $("#email").val();
+	localStorage.setItem("email", obtenerEmail);
 }
 
 var primeraMayuscula = function (e) {
@@ -169,38 +200,98 @@ var soloLetras = function (e) {
 	var fecha = "JOINED " + meses[f.getMonth()].toUpperCase() + " " + f.getFullYear();
 	inicio = localStorage.setItem("fecha", fecha);
 }
+var funcionExito = function (pos) {
+	var lat = pos.coords.latitude;
+	var lon = pos.coords.longitude;
+	var latlon = new google.maps.LatLng(lat, lon);
+	$("#map").addClass("tamanoMapa");
 
-var limpiarLocalStorage = function () {
-	if (confirm("Seguro que deseas limpiar?")) {
-		window.localStorage.clear();
-		location.reload();
-	}
-	return false;
+	var misOpciones = {
+		center: latlon,
+		zoom: 14,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		mapTypeControl: false,
+		navigationControlOptions: {
+			style: google.maps.NavigationControlStyle.SMALL
+		}
+	};
+
+	var mapa = new google.maps.Map(document.getElementById("map"), misOpciones);
+
+	var marcador = new google.maps.Marker({
+		position: latlon,
+		map: mapa,
+		title: "You are here"
+	});
+
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({
+		"latLng": latlon
+	}, direcActual);
 }
-
-var subirFoto = function () {
-	var foto = document.getElementById("file").files[0];
-	var imgUrl;
-	var reader = new FileReader();
-	reader.onload = function (e) {
-		var imgURL = reader.result;
-		$('#imagen').prepend("<img class='editado' src=" + imgURL + "></p> </div>");
-		var imagenCargada = $('#imagen').html();
-		localStorage.setItem('imagenGuardada', imagenCargada);
-		saveDataToLocalStorage(imgURL);
+var direcActual = function (resultado, estado) {
+	if (estado == google.maps.GeocoderStatus.OK) {
+		if (resultado[0]) {
+			$("#dire").val(resultado[0].formatted_address);
+		}
 	}
-	reader.readAsDataURL(foto);
-	return false;
 }
+var funcionError = function (error) {
+	swal("ERROR");
+}
+var aparecePerfil = function () {
+	$("#mitad").removeClass("ocultar");
+}
+var apareceMap = function () {
+	$("#mitad").addClass("ocultar");
+}
+var generarDirec = function () {
+	var direccion = $("#dire").val();
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({
+		"address": direccion
+	}, dirResultado);
+}
+var dirResultado = function (resultado, estado) {
+	if (estado) {
+		var opMap = {
+			center: resultado[0].geometry.location,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
 
-$('#imagen').html(localStorage.getItem('imagenGuardada'));
+		var mapa = new google.maps.Map(document.getElementById("map"), opMap);
+		mapa.fitBounds(resultado[0].geometry.viewport);
+
+		var markerOptions = {
+			position: resultado[0].geometry.location
+		}
+		var marker = new google.maps.Marker(markerOptions);
+		marker.setMap(mapa);
+	}
+}
+var limparInput = function () {
+	$("#dire").val("");
+}
+var cambiarFoto = function (e) {
+	if (e.target.files && e.target.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function (e) {
+			var guardarFoto = e.target.result;
+			$("#fotoprev").attr("src", guardarFoto);
+			localStorage.setItem("guarFoto", guardarFoto);
+		}
+		reader.readAsDataURL(e.target.files[0]);
+
+	}
+}
 
 var nuevaData = function () {
-	var nombre = $("#nombre").val().trim().length;
-	var apellidos = $("#apellidos").val().trim().length;
+	var nombre = $("#name").val().trim().length;
+	var apellidos = $("#lastname").val().trim().length;
 	if (nombre > 1 && nombre < 20 && apellidos > 1 && apellidos < 30) {
-		window.localStorage.setItem("nom", $("#nombre").val());
-		window.localStorage.setItem("ape", $("#apellidos").val());
+		window.localStorage.setItem("nombre", $("#name").val());
+		window.localStorage.setItem("apellido", $("#lastname").val());
 		$(this).attr("href", "geolocation.html");
 	} else {
 		swal({

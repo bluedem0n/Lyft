@@ -17,17 +17,6 @@ a:focus {
 	outline: none;
 }
 
-img {
-	width: 22px;
-	margin-right: 10px;
-}
-
-.editado {
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-}
-
 .text-center h3 {
 	font-weight: bold;
 }
@@ -138,186 +127,177 @@ img {
 	margin-bottom: 15px;
 }
 
-
-/* MAPA */
-
-#map {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: 1;
-}
-#direccion {
-    position: absolute;
-    bottom: 100px;
-    padding: 0;
-    background: black;
-    z-index: 2;
-    left: 15px;
-    color: white;
-}
-.efecto {
-	position: absolute;
-	left: 47px;
-	overflow: hidden;
-	z-index: 2;
+.tamanoMapa {
+	width: 100%;
+	height: 100vh;
 }
 
-.icono-gift {
-	font-size: 30px !important;
-	color: #060A23;
-	left: 9em;
-	margin-top: 0.3em;
-	border: 1px solid gray;
+.pack-icns {
+	width: 100%;
+}
+
+.circulo {
 	border-radius: 50%;
 	background-color: white;
-	padding: 4px;
-}
-
-.icono-map {
-	font-size: 45px !important;
-	color: #060A23;
-	margin-top: 0.2em;
-}
-
-.logo {
-	position: absolute;
-	z-index: 2;
-	margin-top: 1em;
-	width: 66px;
-	margin-left: 10em;
-}
-
-.input {
-	position: absolute;
-	z-index: 1;
-	bottom: 64px;
-	left: 65px;
-}
-
-.usuario {
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	margin-left: -5px;
-	margin-top: 2em;
-}
-
-.perfil {
-	margin-top: 2.5em;
-	font-size: 16px;
-	white-space: nowrap;
-}
-
-#nombre-perfil {
-	font-weight: 600;
-}
-
-#ver-perfil {
-	margin-top: 2.5em !important;
-	margin-bottom: 1.5em !important;
-	color: #060A23 !important;
-}
-
-.separador {
 	border: 1px solid gray;
-	margin-left: -15px;
-	margin-right: -15px;
-	margin-top: 1em;
-}
-
-.btn-map {
-	padding: 0 20px;
-	background-color: #108F66;
-	border: 0;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	line-height: 50px;
-	color: #fff;
-	transition: all .3s;
-	width: 100%;
-	letter-spacing: 2px;
-	border-radius: 0px;
-	z-index: 1;
-}
-
-
-/* Ver perfil */
-
-.user {
-	background: url(../img/user.jpg) no-repeat;
-	height: 200px;
-	margin-bottom: 2em;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background-size: 100% 100%;
-}
-
-.nombre-perfil {
-	font-size: 26px;
-}
-
-.join-date {
-	margin: 0px 0.8em;
-	padding: 2% 0;
-	border-radius: 5px;
-	background-color: #23527c;
-	color: white;
-}
-
-.info {
-	margin: 1.2em;
-	font-size: 16px;
-}
-
-.ml-8 {
-	margin-left: 0.8em;
-}
-
-.camara {
-	float: right;
-	margin-top: 2.5em;
-	margin-right: 0.5em;
-}
-
-
-/* Editar Usuario */
-
-#video {
-    width: 304px;
-    height: 245px;
-    margin-top: 4em;
-    margin-left: 14px;
-}
-
-#canvas {
-	width: 191px;
-	height: 168px;
-	margin-top: 1em;
-	margin-left: 75px;
-}
-
-.btn-file {
-	position: relative;
-	overflow: hidden;
-}
-
-.btn-file input[type=file] {
 	position: absolute;
-	top: 0;
-	right: 0;
-	min-width: 100%;
-	min-height: 100%;
-	font-size: 100px;
-	text-align: right;
-	filter: alpha(opacity=0);
-	opacity: 0;
-	outline: none;
-	background: white;
-	cursor: inherit;
-	display: block;
+	width: 50px;
+	height: 50px;
+	z-index: 100;
+	top: 10px;
+}
+
+.izq {
+	left: 10px
+}
+
+.dere {
+	right: 10px;
+}
+
+.sn-borde {
+	border: none;
+	width: 100%;
+	text-align: center;
+}
+
+.icons {
+	font-size: 26px;
+	color: black;
+	margin: 23%;
+}
+
+.logo2 {
+	width: 20%;
+	height: 50px;
+	position: absolute;
+	z-index: 100;
+	top: 10px;
+	margin: 0 40%;
+}
+
+.pack-btns {
+	position: absolute;
+	z-index: 100;
+	bottom: 0;
+	margin: 2% 3%;
+	width: 95%;
+}
+
+.borde {
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	margin-bottom: 2%;
+	text-align: center;
+	width: 100%;
+}
+
+.dir {
+	background-color: white;
+	padding: 2% 10%;
+}
+
+.pic {
+	padding: 5%;
+	background-size: cover;
+	font-size: 20px;
+	color: white;
+	background-color: #31ADA6;
+	cursor: pointer;
+}
+
+.gm-style-mtc {
+	display: none !important;
+}
+
+.semiperfil {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ocultar {
+	display: none;
+}
+
+.fondoBlanco {
+	background-color: white;
+	position: absolute;
+	height: 100vh;
+	width: 70%;
+}
+
+.circuloFoto {
+	border-radius: 50%;
+	border: 1px solid #bbb;
+	padding: 1%;
+	width: 50%;
+}
+
+.margenes {
+	margin: 3% 0;
+}
+
+.icn-mgd {
+	margin-left: 5%;
+}
+
+.mg-t {
+	margin-left: 5%;
+	display: inline-block;
+}
+
+.fondoFoto {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+}
+
+.puntos {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.btnedit {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.fecha {
+	border-radius: 5px;
+	background-color: #F3F5F5;
+	margin: 0 5%;
+	padding: 2% 0;
+}
+
+.icns-pfl {
+	color: black;
+}
+
+.margenlados {
+	margin: 5%;
+}
+
+.texto {
+	margin-left: 2%;
+}
+
+.rect-foto {
+	border: 1px solid #bbb;
+	margin: 2% 10%;
+	width: 80%;
+}
+
+.mt-21 {
+	margin-top: 21px;
+}
+
+.fotoRect {
+	width: 30%;
+	height: 80px;
+	margin: 2% 0;
 }
